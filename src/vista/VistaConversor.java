@@ -25,11 +25,15 @@ public class VistaConversor extends JFrame{
 
         this.add(panel, BorderLayout.CENTER);
     }
-    public void setValorIngresado(String valor) {
-        textField2.setText(valor);
+    public void setValorIngresado(String valor, JTextField textField) {
+        if(textField == textField1){
+            textField2.setText(valor);
+        }else if(textField == textField2){
+            textField1.setText(valor);
+        }
     }
-    public String getValorIngresado() {
-        return textField1.getText();
+    public String getValorIngresado(JTextField textField) {
+        return textField.getText();
     }
     //Listener de los textfield
     public void addActionListener(ActionListener listener) {
