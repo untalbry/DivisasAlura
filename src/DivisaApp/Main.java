@@ -4,11 +4,10 @@ import modelo.Conversor;
 import vista.VistaConversor;
 public class Main {
     public static void main(String[] args) {
-        Conversor model = new Conversor();
-        VistaConversor view = new VistaConversor();
-        Controlador controller = new Controlador();
-
-        //controller.start();
+        Conversor modelo = new Conversor();
+        VistaConversor vista = new VistaConversor();
+        Controlador controlador = new Controlador(vista,modelo);
+        vista.setVisible(true);
 
     }
 }
