@@ -1,3 +1,9 @@
+/**
+ * @Autor : Bryan Castro Sánchez
+ * @Version: 1.0.0
+ * Descripción: Conversor de divisas, proyecto hecho para el curso Next Education
+ *
+ */
 package DivisaApp;
 import controlador.Controlador;
 import modelo.Conversor;

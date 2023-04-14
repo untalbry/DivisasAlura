@@ -1,17 +1,14 @@
 package vista;
-import javafx.scene.control.ComboBox;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-
 public class VistaConversor extends JFrame{
+    //Creación de componentes
     private JTextField textField1;
     private JTextField textField2;
     private JComboBox<String> comboBox;
     private JComboBox<String> comboBox2;
+    //Valores para los ComboBox, Aqui puedes añadir mas en un futuro
     String[] Divisas = { "MXN", "USD", "EUR" };
 
     public VistaConversor(){
@@ -19,7 +16,7 @@ public class VistaConversor extends JFrame{
         this.setSize(600, 400);
         this.setLayout(new BorderLayout());
 
-        JPanel panel = new JPanel(); // Cambio de layout a GridLayout
+        JPanel panel = new JPanel();
         comboBox = new JComboBox<>(Divisas);
         panel.add(comboBox);
         textField1 = new JTextField();
@@ -32,17 +29,10 @@ public class VistaConversor extends JFrame{
         textField2.setPreferredSize(new Dimension(100,25));
         panel.add(textField2);
 
-
-
-
         this.add(panel, BorderLayout.CENTER);
     }
     public void setValorIngresado(String valor, JTextField textField) {
-        if(textField == textField1){
-            textField2.setText(valor);
-        }else if(textField == textField2){
-            textField1.setText(valor);
-        }
+        textField.setText(valor);
     }
     public String getValorIngresado(JTextField textField) {
         return textField.getText();
