@@ -12,6 +12,8 @@ public class VistaConversor extends JFrame{
     String[] Divisas = { "MXN", "USD", "EUR" };
 
     public VistaConversor(){
+        ImageIcon icono = new ImageIcon("src/vista/img/monedas.png");
+        this.setIconImage(icono.getImage());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 400);
         this.setLayout(new BorderLayout());
