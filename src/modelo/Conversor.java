@@ -27,7 +27,7 @@ public class Conversor {
         relation.put("EUR-EUR", 1.0);
     }
     //Función para validar si alguno de los campos del usuario es un número.
-    public boolean validarNumero(String numero) {
+    public boolean isNumber(String numero) {
         try {
             Double.parseDouble(numero);
             return true;
@@ -56,12 +56,7 @@ public class Conversor {
     }
     //Validar si la relación seleccionada esta dentro del MapaHash
     public Double getRelation(String clave){
-        try{
             return relation.get(clave);
-        }catch (NullPointerException e){
-            System.out.println("Tipo de conversion no encontrada: " + e.getMessage());
-            return null;
-        }
     }
 
 

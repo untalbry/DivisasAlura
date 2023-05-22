@@ -30,7 +30,7 @@ public class Controlador implements ActionListener {
         DecimalFormat df = new DecimalFormat("#.###"); //Formato para colocar los valores obtenidos
         //System.out.println(valor);
         //Si el valor ingresado es un número entonces pasamos al converson el número
-        if (conversor.validarNumero(valor)) {
+        if (conversor.isNumber(valor)) {
             conversor.setValorIngresado(Double.parseDouble(valor));
             //Y si la fuente de la Action es el TextField 1 seteamos la clave ComboBox1-Combobox2
             if(source==vistaConversor.getTextField1()){
@@ -44,7 +44,7 @@ public class Controlador implements ActionListener {
             //Realizamos conversion
             conversor.Convertir();
             String resultado = df.format(conversor.getResultado()); //Casteamos a String el resultado y con formato
-            vistaConversor.setValorIngresado(String.valueOf(resultado), (JTextField) sourceTo); // Pasamos el valor al JTexfield correspondiente
+            vistaConversor.setValorIngresado(resultado, (JTextField) sourceTo); // Pasamos el valor al JTexfield correspondiente
         } else {
             //Pasamos el mensaje a un JOptionPane
             vistaConversor.mostrarMensaje("Ingrese un número válido");
