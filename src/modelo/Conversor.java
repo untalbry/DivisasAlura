@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public class Conversor {
     private Double valorIngresado;
@@ -28,12 +29,7 @@ public class Conversor {
     }
     //Función para validar si alguno de los campos del usuario es un número.
     public boolean isNumber(String numero) {
-        try {
-            Double.parseDouble(numero);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
+        return Pattern.matches("-?\\d+(\\.\\d+)?", numero);
     }
     public Double getResultado(){
         return resultado;
