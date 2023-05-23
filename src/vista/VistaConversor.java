@@ -4,10 +4,10 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 public class VistaConversor extends JFrame{
     //Creación de componentes
-    private JTextField textField1;
-    private JTextField textField2;
-    private JComboBox<String> comboBox;
-    private JComboBox<String> comboBox2;
+    private final JTextField textField1;
+    private final JTextField textField2;
+    private final JComboBox<String> comboBox;
+    private final JComboBox<String> comboBox2;
     //Valores para los ComboBox, Aqui puedes añadir mas en un futuro
     String[] Divisas = { "MXN", "USD", "EUR" };
 
