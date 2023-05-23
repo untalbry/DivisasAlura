@@ -1,22 +1,23 @@
 package controlador;
-
 import modelo.Conversor;
-import vista.VistaConversor;
+import vista.Vista;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+
 //Implementamos la interfaz Action Listener y sobre escribimos su único método
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
 public class Controlador implements ActionListener {
-    private VistaConversor vistaConversor;
-    private Conversor conversor;
-    private DecimalFormatSymbols otherSymbols = DecimalFormatSymbols.getInstance(Locale.getDefault());
+    private final Vista vistaConversor;
+    private final Conversor conversor;
+    private final DecimalFormatSymbols otherSymbols = DecimalFormatSymbols.getInstance(Locale.getDefault());
     private DecimalFormat df;
 
-    public Controlador(VistaConversor vistaConversor, Conversor conversor) {
+    public Controlador(Vista vistaConversor, Conversor conversor) {
         this.vistaConversor = vistaConversor;
         this.conversor = conversor;
         this.vistaConversor.addActionListener(this);
@@ -31,7 +32,7 @@ public class Controlador implements ActionListener {
      * 
      * @param e
      *          Y obtenemos su origen,
-     */
+    **/
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
@@ -60,7 +61,7 @@ public class Controlador implements ActionListener {
                                                                                 // correspondiente
         } else {
             // Pasamos el mensaje a un JOptionPane
-            vistaConversor.mostrarMensaje("Ingrese un número válido");
+            vistaConversor.mostrarMensaje();
         }
     }
 }
