@@ -14,14 +14,14 @@ import java.util.Locale;
 public class Controlador implements ActionListener {
     private final Vista vistaConversor;
     private final Conversor conversor;
-    private final DecimalFormatSymbols otherSymbols = DecimalFormatSymbols.getInstance(Locale.getDefault());
-    private DecimalFormat df;
+    private final DecimalFormat df;
 
     public Controlador(Vista vistaConversor, Conversor conversor) {
         this.vistaConversor = vistaConversor;
         this.conversor = conversor;
         this.vistaConversor.addActionListener(this);
         //Set decimal separator to a dot
+        DecimalFormatSymbols otherSymbols = DecimalFormatSymbols.getInstance(Locale.getDefault());
         otherSymbols.setDecimalSeparator('.');
         df = new DecimalFormat("###.###", otherSymbols); // Formato para colocar los valores obtenidos
 
@@ -61,6 +61,7 @@ public class Controlador implements ActionListener {
                                                                                 // correspondiente
         } else {
             // Pasamos el mensaje a un JOptionPane
+            vistaConversor.setValorIngresado("", (JTextField) source);
             vistaConversor.mostrarMensaje();
         }
     }
