@@ -18,14 +18,14 @@ public class Conversor {
          * También colocalo en el ComboBox de la parte de vistaConversor
          */
         relation.put("MXN-USD", 0.049);
-        relation.put("MXN-EUR", 0.041);
-        relation.put("MXN-MXN", 1.0);
-        relation.put("USD-MXN", 20.28);
-        relation.put("USD-EUR", 0.84);
-        relation.put("USD-USD", 1.0);
-        relation.put("EUR-MXN", 24.32);
-        relation.put("EUR-USD", 1.20);
-        relation.put("EUR-EUR", 1.0);
+        relation.put("MXN-EUR", 0.052);
+        relation.put("MXN-MXN", 1.000);
+        relation.put("USD-MXN", 20.280);
+        relation.put("USD-EUR", 0.840);
+        relation.put("USD-USD", 1.000);
+        relation.put("EUR-MXN", 19.180);
+        relation.put("EUR-USD", 1.200);
+        relation.put("EUR-EUR", 1.000);
     }
     //Función para validar si alguno de los campos del usuario es un número.
     public boolean isNumber(String numero) {
@@ -48,7 +48,7 @@ public class Conversor {
     //Generamos la clave Hash para buscar la relación con el valor de las ComboBox
     public void setClave(String divisa1, String divisa2){
         this.clave = divisa1+"-"+divisa2;
-       // System.out.println(clave);
+        System.out.println(clave);
     }
     //Validar si la relación seleccionada esta dentro del MapaHash
     public Double getRelation(String clave){
